@@ -1,11 +1,8 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: {},
 });
 
 export const pokemonApi = createApi({
