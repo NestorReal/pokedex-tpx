@@ -9,7 +9,6 @@ import {
   } from 'formik';
   import Navbar from '../components/Navbar/Navbar';
   import { InputContainer, Grid } from './styles';
-  // import SearchBar from '../components/SearchBar/SearchBar';
 
 
 interface MyFormValues {
@@ -20,11 +19,9 @@ export default function App() {
   const initialValues: MyFormValues = { firstName: '' };
   const [name, setName] = useState('');
   const [listValue, showlist] = useState(true);
-  console.log(name);
   return (
     <div>
       <Navbar />
-      {/* <SearchBar onSearch={(data: string) => setName(data)} openList={() => {showlist(true); setName('');}}/> */}
       <div className="App">
         <Formik
           initialValues={initialValues}
