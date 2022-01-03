@@ -1,4 +1,4 @@
-import { BrowserRouter as Route, Link } from 'react-router-dom'
+import  { useNavigate } from 'react-router-dom';
 import { useGetPokemonByNameQuery } from './services/pokemon'
 
 export const Pokemon = ({
@@ -9,11 +9,10 @@ export const Pokemon = ({
   const { data, error, isLoading, isFetching } = useGetPokemonByNameQuery(
     name,
   )
-
-   const redirect =  (name: string) =>{
-     console.log(name)
-    return <Route><Link to={name} /></Route>
-   }
+  const navigate = useNavigate();
+  const redirect =  (name: string) =>{
+  return navigate(`/${name}`)
+  }
 
   return (
     <div style={{margin: '10px'}} onClick={() => redirect(name)  }>
